@@ -1,0 +1,7 @@
+<h1>My list</h1>
+<ul>
+<%@lists.each do |list| %>
+  <%=link_to "dummy", list%>
+    <li><%=list.name%></li>
+  <%end%>
+</ul>
