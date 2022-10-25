@@ -1,7 +1,10 @@
 <h1>My list</h1>
 <ul>
 <%@lists.each do |list| %>
-  <%=link_to "dummy", list%>
-    <li><%=list.name%></li>
+    <li><%=list.name%> | <%=link_to "detail", list%></li>
   <%end%>
 </ul>
+
+<div>
+  <%=link_to "Add Category", new_list_path %>
+</div>
