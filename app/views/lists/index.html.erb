@@ -1,10 +1,31 @@
-<h1>My list</h1>
-<ul>
-<%@lists.each do |list| %>
-    <li><%=list.name%> | <%=link_to "detail", list%></li>
-  <%end%>
-</ul>
 
-<div>
-  <%=link_to "Add Category", new_list_path %>
+  <div class="banner-index">
+    <h1>Welcome to your lists!</h1>
+  </div>
+
+  <h1>My list</h1>
+  <%= cl_image_tag("3y2eliottqifz9tsps57bvnyjlqk",
+      width: 400, height: 300, crop: :fill) %>
+
+<div class = "wrapper">
+
+  <div class="list-index-content">
+    <%@lists.each do |list| %>
+    <div class="list-card-index">
+      <%=link_to list do%>
+        <%= image_tag 'list-image', class: 'image-list-cover',  alt: "image cover for list" %>
+
+
+        <div class="list-card-content">
+          <p><%=list.name%> | </p>
+        </div>
+      <%end%>
+    </div>
+    <%end%>
+  </div>
+
+  <div class="wrapper item-bottom">
+    <%=link_to "Add Category", new_list_path %>
+  </div>
+
 </div>
